@@ -23,18 +23,19 @@ jobs:
           script: |
             echo "CONNECTED TO EC2"
 
-            # Fix PATH for non-interactive shell
-            export PATH=/usr/bin:/usr/local/bin:$PATH
+            # Load NVM manually (MOST IMPORTANT)
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
             node -v
             npm -v
             pm2 -v
 
-            cd /home/ubuntu/ec2-test   # 👈 agar path alag ho to change karna
+            cd /home/ubuntu/ec2-test
 
             git pull origin main
             npm install
 
             pm2 restart backend-app || pm2 start server.js --name backend-app
-
             pm2 save
