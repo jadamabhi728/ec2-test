@@ -74,8 +74,8 @@ app.get('/api/users/:id', (req, res) => {
 
 // Root endpoint
 app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Node.js API Server',
+  res.json({ 
+    message: 'Welcome to abhishekh pipeline divyanshu sir ========',
     endpoints: {
       'GET /api/health': 'Health check endpoint',
       'GET /api/users': 'Get all users',
