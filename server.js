@@ -75,7 +75,7 @@ app.get('/api/users/:id', (req, res) => {
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({ 
-    message: 'Welcome to Love World ========',
+    message: 'Welcome to durga sir ji wellcome ========',
     endpoints: {
       'GET /api/health': 'Health check endpoint',
       'GET /api/users': 'Get all users',
